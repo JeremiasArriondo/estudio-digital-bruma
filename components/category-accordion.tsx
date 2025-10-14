@@ -99,7 +99,7 @@ export function CategoryAccordion() {
             onClick={() => toggleCategory(index)}
             className={`w-full p-4 flex items-center justify-between text-left rounded-lg transition-all duration-300 ${
               activeIndex === index
-                ? "bg-gradient-to-r from-purple-600 to-fuchsia-600 dark:from-purple-700 dark:to-fuchsia-700 text-white"
+                ? "bg-gradient-to-r from-[#6C668A] to-[#9A8FC0] dark:from-purple-700 dark:to-fuchsia-700 text-white"
                 : "bg-purple-100 dark:bg-slate-800 hover:bg-purple-200 dark:hover:bg-slate-700 text-[#575373] dark:text-purple-300"
             }`}
           >
@@ -110,7 +110,7 @@ export function CategoryAccordion() {
               className={`p-1 rounded-full ${
                 activeIndex === index
                   ? "bg-white/20 dark:bg-white/20"
-                  : "bg-purple-600 dark:bg-purple-500"
+                  : "bg-violet-primary dark:bg-purple-500"
               }`}
             >
               <ChevronDown size={16} className="text-white" />
