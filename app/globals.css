@@ -3,6 +3,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-violet-primary: #575373;
+  --color-violet-secondary: #7a6f9c;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -55,7 +60,7 @@
     --popover-foreground: 246 19% 15%;
 
     /* Color Principal (El más distintivo: #575373) */
-    --primary: 246 19% 39%;
+    --primary: 248 16% 39%;
     --primary-foreground: 0 0% 98%; /* Texto en contraste (casi blanco) */
 
     /* Color Secundario (El segundo oscuro: #454559) */

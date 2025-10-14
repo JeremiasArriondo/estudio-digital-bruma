@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown } from "lucide-react"
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 const categories = [
   {
@@ -73,27 +73,34 @@ const categories = [
   {
     title: "Servicios personales",
     subtitle: "(Peluquería, estética, spa, masajes, uñas, barberías…)",
-    benefits: ["Servicios, turnos, contacto", "Muestra visual del trabajo", "Integración con redes"],
+    benefits: [
+      "Servicios, turnos, contacto",
+      "Muestra visual del trabajo",
+      "Integración con redes",
+    ],
   },
-]
+];
 
 export function CategoryAccordion() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const toggleCategory = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index)
-  }
+    setActiveIndex(activeIndex === index ? null : index);
+  };
 
   return (
     <div className="space-y-4">
       {categories.map((category, index) => (
-        <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+        <div
+          key={index}
+          className="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+        >
           <button
             onClick={() => toggleCategory(index)}
             className={`w-full p-4 flex items-center justify-between text-left rounded-lg transition-all duration-300 ${
               activeIndex === index
                 ? "bg-gradient-to-r from-purple-600 to-fuchsia-600 dark:from-purple-700 dark:to-fuchsia-700 text-white"
-                : "bg-purple-100 dark:bg-slate-800 hover:bg-purple-200 dark:hover:bg-slate-700 text-purple-700 dark:text-purple-300"
+                : "bg-purple-100 dark:bg-slate-800 hover:bg-purple-200 dark:hover:bg-slate-700 text-[#575373] dark:text-purple-300"
             }`}
           >
             <span className="font-semibold">{category.title}</span>
@@ -101,7 +108,9 @@ export function CategoryAccordion() {
               animate={{ rotate: activeIndex === index ? 180 : 0 }}
               transition={{ duration: 0.3 }}
               className={`p-1 rounded-full ${
-                activeIndex === index ? "bg-white/20 dark:bg-white/20" : "bg-purple-600 dark:bg-purple-500"
+                activeIndex === index
+                  ? "bg-white/20 dark:bg-white/20"
+                  : "bg-purple-600 dark:bg-purple-500"
               }`}
             >
               <ChevronDown size={16} className="text-white" />
@@ -118,18 +127,28 @@ export function CategoryAccordion() {
               >
                 <div className="p-4 bg-white dark:bg-slate-800 border-2 border-purple-200 dark:border-slate-700 rounded-b-lg transition-colors">
                   {category.subtitle && (
-                    <p className="text-sm text-purple-700/70 dark:text-purple-400/70 mb-3">{category.subtitle}</p>
+                    <p className="text-sm text-purple-700/70 dark:text-purple-400/70 mb-3">
+                      {category.subtitle}
+                    </p>
                   )}
                   <ul className="space-y-2">
                     {category.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-start">
-                        <span className="text-purple-600 dark:text-purple-400 mr-2 text-lg">✅</span>
-                        <span className="text-purple-900 dark:text-purple-300">{benefit}</span>
+                        <span className="text-purple-600 dark:text-purple-400 mr-2 text-lg">
+                          ✅
+                        </span>
+                        <span className="text-purple-900 dark:text-purple-300">
+                          {benefit}
+                        </span>
                       </li>
                     ))}
                     <li className="flex items-start">
-                      <span className="text-purple-600 dark:text-purple-400 mr-2 text-lg">✅</span>
-                      <span className="text-purple-900 dark:text-purple-300">etc.</span>
+                      <span className="text-purple-600 dark:text-purple-400 mr-2 text-lg">
+                        ✅
+                      </span>
+                      <span className="text-purple-900 dark:text-purple-300">
+                        etc.
+                      </span>
                     </li>
                   </ul>
                 </div>
@@ -139,5 +158,5 @@ export function CategoryAccordion() {
         </div>
       ))}
     </div>
-  )
+  );
 }
