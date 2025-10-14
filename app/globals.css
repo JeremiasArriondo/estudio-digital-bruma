@@ -153,14 +153,7 @@
   height: 100%;
   width: 100%;
   z-index: 0;
-  background: url("/bruma.jpeg");
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  overflow: hidden;
+  background: url("/bruma.jpeg") center/cover no-repeat;
 }
 
 .title {
@@ -189,6 +182,7 @@
   height: 100vh;
   width: 100%;
   background: #fff;
+  overflow: hidden;
 }
 
 .fog-container {
@@ -207,6 +201,14 @@
 }
 
 .fog-img-first {
+  background: url("/fog-1.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center;
+  animation: marquee 60s linear infinite;
+}
+
+.fog-img-mobile {
   background: url("/fog-1.png");
   background-repeat: repeat-x;
   background-size: contain;
@@ -246,4 +248,16 @@
 
 .animate-fade-in {
   animation: fadeIn 1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .absolute-bg {
+    background: none !important;
+  }
+  .fog-img-first {
+    background: none !important;
+  }
+  .fog-img-second {
+    background: none !important;
+  }
 }
