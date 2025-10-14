@@ -1,29 +1,28 @@
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { MessageCircle, Send } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
-import { HeroCarousel } from "@/components/hero-carousel"
-import { CategoryAccordion } from "@/components/category-accordion"
-import { FaqAccordion } from "@/components/faq-accordion"
-import { WhatsAppButton } from "@/components/whatsapp-button"
-import { TopBar } from "@/components/top-bar"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { CategoryAccordion } from "@/components/category-accordion";
+import { FaqAccordion } from "@/components/faq-accordion";
+import { HeroCarousel } from "@/components/hero-carousel";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { TopBar } from "@/components/top-bar";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { WhatsAppButton } from "@/components/whatsapp-button";
+import { MessageCircle, Send } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#FAF5FF] via-[#F3E8FF] to-[#E9D5FF] dark:from-[#0f172a] dark:via-[#1e293b] dark:to-[#0f172a] font-['Poppins',sans-serif] transition-colors duration-500">
+    <div className="min-h-screen bg-gradient-to-br from-[#FAF5FF] via-[#F3E8FF] to-[#575373] dark:from-[#0f172a] dark:via-[#1e293b] dark:to-[#0f172a] font-['Poppins',sans-serif] transition-colors duration-500">
       <TopBar />
       <WhatsAppButton />
 
       {/* Navbar */}
       <header className="sticky top-0 z-40 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-slate-900/80 border-b border-purple-200 dark:border-slate-700 transition-colors duration-300 shadow-sm">
         <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-fuchsia-600 dark:from-purple-500 dark:to-fuchsia-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">W</span>
-            </div>
-            <span className="font-bold text-purple-700 dark:text-purple-400 text-xl">WebDesign</span>
+          <div className="flex items-center gap-2 mx-2">
+            <span className="font-bold text-[#575373] dark:text-purple-400 text-xl">
+              Bruma
+            </span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
             <Link
@@ -88,9 +87,63 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Prueba */}
+      <section className="fog">
+        <div className="absolute-bg"></div>
+        <div className="fog-container">
+          <div className="fog-img fog-img-first"></div>
+          <div className="fog-img fog-img-second"></div>
+        </div>
+
+        <section
+          id="inicio"
+          className="relative min-h-[600px] py-20 md:py-32 overflow-hidden"
+        >
+          <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-6 text-center md:text-left">
+                <div className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-gradient-to-r from-[#575373] to-[#7A6F9C] dark:from-purple-500 dark:to-fuchsia-500 text-white transition-colors shadow-lg">
+                  Diseño web profesional
+                </div>
+                <div className="h-24 md:h-32">
+                  <HeroCarousel />
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                  <Link href="#contacto">
+                    <Button className="w-full sm:w-auto bg-gradient-to-r from-[#575373] to-[#7A6F9C] hover:from-purple-700 hover:to-fuchsia-700 dark:from-purple-500 dark:to-fuchsia-500 dark:hover:from-purple-600 dark:hover:to-fuchsia-600 text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                      Quiero mi web ahora
+                    </Button>
+                  </Link>
+                  <Link href="#categorias">
+                    <Button
+                      variant="outline"
+                      className="w-full sm:w-auto border-2 border-[#7A6F9C] dark:border-purple-500 text-[#7A6F9C] dark:text-purple-400 hover:bg-purple-100 dark:hover:bg-slate-800 hover:text-purple-900 dark:hover:text-purple-300 transition-all duration-300 bg-transparent font-semibold"
+                    >
+                      Ver categorías
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+              <div className="relative h-[300px] md:h-[400px] animate-fade-in">
+                <Image
+                  src="/bruma.jpeg?height=600&width=500"
+                  alt="Diseño web profesional en smartphone"
+                  fill
+                  className="object-contain dark:opacity-90"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
       {/* Hero Section */}
-      <section id="inicio" className="relative py-20 md:py-32 overflow-hidden">
-        <div className="container px-4 md:px-6">
+      {/* <section
+        id="inicio"
+        className="relative min-h-[600px] py-20 md:py-32 overflow-hidden"
+      >
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6 text-center md:text-left">
               <div className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-gradient-to-r from-purple-600 to-fuchsia-600 dark:from-purple-500 dark:to-fuchsia-500 text-white transition-colors shadow-lg">
@@ -117,7 +170,7 @@ export default function Home() {
             </div>
             <div className="relative h-[300px] md:h-[400px] animate-fade-in">
               <Image
-                src="/placeholder.svg?height=600&width=500"
+                src="/bruma-hero.jpeg?height=600&width=500"
                 alt="Diseño web profesional en smartphone"
                 fill
                 className="object-contain dark:opacity-90"
@@ -126,19 +179,23 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* What We Do Section */}
-      <section id="que-hacemos" className="py-16 bg-white/50 dark:bg-slate-900/50 transition-colors">
-        <div className="container px-4 md:px-6">
+      <section
+        id="que-hacemos"
+        className="py-16 bg-white/50 dark:bg-slate-900/50 transition-colors"
+      >
+        <div className="flex items-center justify-center">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-purple-700 dark:text-purple-400">
+            <h2 className="text-3xl md:text-4xl font-bold  text-[#575373] dark:text-purple-400">
               Diseñamos webs que trabajan para vos
             </h2>
             <p className="text-lg text-purple-900/80 dark:text-purple-300/80">
-              Diseñamos sitios que se adaptan a tus necesidades, que representan lo que hacés, y que te ayudan a crecer.
-              Cada web es única, como vos y tu proyecto. Creamos sitios modernos, funcionales y claros. También
-              diseñamos tu identidad visual.
+              Diseñamos sitios que se adaptan a tus necesidades, que representan
+              lo que hacés, y que te ayudan a crecer. Cada web es única, como
+              vos y tu proyecto. Creamos sitios modernos, funcionales y claros.
+              También diseñamos tu identidad visual.
             </p>
           </div>
         </div>
@@ -146,10 +203,12 @@ export default function Home() {
 
       {/* Categories Section */}
       <section id="categorias" className="py-16">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto space-y-8">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-purple-700 dark:text-purple-400">Categorías</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-purple-700 dark:text-purple-400">
+                Categorías
+              </h2>
               <p className="text-lg text-purple-900/80 dark:text-purple-300/80">
                 Tocá tu categoría para ver lo que incluye 👇
               </p>
@@ -164,13 +223,14 @@ export default function Home() {
         id="diseno"
         className="py-16 bg-gradient-to-br from-purple-100/50 to-fuchsia-100/50 dark:from-slate-900/50 dark:to-slate-800/50 transition-colors"
       >
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-purple-700 dark:text-purple-400">
               ¿También necesitás tu marca?
             </h2>
             <p className="text-lg text-purple-900/80 dark:text-purple-300/80">
-              Te ayudamos con el diseño de tu identidad visual, creación de logo, branding, mockups y más.
+              Te ayudamos con el diseño de tu identidad visual, creación de
+              logo, branding, mockups y más.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
               <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-purple-200 dark:border-slate-700 hover:scale-105 transform duration-300">
@@ -192,9 +252,12 @@ export default function Home() {
                     <path d="M13.5 9a4 4 0 0 1 0 8h-3a4 4 0 0 1 0-8h3Z"></path>
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-purple-700 dark:text-purple-400 mb-2">Diseño de Logo</h3>
+                <h3 className="text-xl font-semibold text-purple-700 dark:text-purple-400 mb-2">
+                  Diseño de Logo
+                </h3>
                 <p className="text-purple-900/70 dark:text-purple-300/70">
-                  Creamos la identidad visual de tu marca con un logo profesional y memorable.
+                  Creamos la identidad visual de tu marca con un logo
+                  profesional y memorable.
                 </p>
               </div>
               <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-purple-200 dark:border-slate-700 hover:scale-105 transform duration-300">
@@ -217,9 +280,12 @@ export default function Home() {
                     <rect width="7" height="7" x="3" y="14" rx="1"></rect>
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-purple-700 dark:text-purple-400 mb-2">Branding Completo</h3>
+                <h3 className="text-xl font-semibold text-purple-700 dark:text-purple-400 mb-2">
+                  Branding Completo
+                </h3>
                 <p className="text-purple-900/70 dark:text-purple-300/70">
-                  Desarrollamos todos los elementos visuales para que tu marca sea consistente.
+                  Desarrollamos todos los elementos visuales para que tu marca
+                  sea consistente.
                 </p>
               </div>
               <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-purple-200 dark:border-slate-700 hover:scale-105 transform duration-300">
@@ -236,13 +302,23 @@ export default function Home() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+                    <rect
+                      width="14"
+                      height="20"
+                      x="5"
+                      y="2"
+                      rx="2"
+                      ry="2"
+                    ></rect>
                     <path d="M12 18h.01"></path>
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-purple-700 dark:text-purple-400 mb-2">Mockups</h3>
+                <h3 className="text-xl font-semibold text-purple-700 dark:text-purple-400 mb-2">
+                  Mockups
+                </h3>
                 <p className="text-purple-900/70 dark:text-purple-300/70">
-                  Visualizá cómo se verá tu marca en diferentes aplicaciones y formatos.
+                  Visualizá cómo se verá tu marca en diferentes aplicaciones y
+                  formatos.
                 </p>
               </div>
             </div>
@@ -252,7 +328,7 @@ export default function Home() {
 
       {/* Contact Form Section */}
       <section id="contacto" className="py-16">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-md mx-auto bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 border-2 border-purple-200 dark:border-slate-700 transition-colors">
             <div className="text-center space-y-4 mb-6">
               <h2 className="text-2xl md:text-3xl font-bold text-purple-700 dark:text-purple-400">
@@ -264,7 +340,10 @@ export default function Home() {
             </div>
             <form className="space-y-4">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium text-purple-700 dark:text-purple-400">
+                <label
+                  htmlFor="name"
+                  className="text-sm font-medium text-purple-700 dark:text-purple-400"
+                >
                   Nombre
                 </label>
                 <Input
@@ -274,7 +353,10 @@ export default function Home() {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="contact" className="text-sm font-medium text-purple-700 dark:text-purple-400">
+                <label
+                  htmlFor="contact"
+                  className="text-sm font-medium text-purple-700 dark:text-purple-400"
+                >
                   Email o teléfono
                 </label>
                 <Input
@@ -296,7 +378,7 @@ export default function Home() {
         id="faq"
         className="py-16 bg-gradient-to-b from-purple-50 to-fuchsia-50 dark:from-slate-900 dark:to-slate-800 transition-colors"
       >
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto space-y-8">
             <div className="text-center space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold text-purple-700 dark:text-purple-400">
@@ -313,15 +395,19 @@ export default function Home() {
 
       {/* Closing Phrases */}
       <section className="py-16 bg-gradient-to-r from-purple-700 to-fuchsia-700 dark:from-purple-900 dark:to-fuchsia-900 transition-colors shadow-xl">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-white">¿Listo para destacarte?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              ¿Listo para destacarte?
+            </h2>
             <p className="text-xl text-white/95">
-              Muchos profesionales aún no tienen una web, o usan herramientas limitadas como Linktree. Nosotros hacemos
-              que cada página trabaje para vos, te represente y te ayude a crecer.
+              Muchos profesionales aún no tienen una web, o usan herramientas
+              limitadas como Linktree. Nosotros hacemos que cada página trabaje
+              para vos, te represente y te ayude a crecer.
             </p>
             <p className="text-xl text-white/95">
-              Ya hiciste lo más difícil: empezar. Ahora te ayudamos a mostrarlo como se merece.
+              Ya hiciste lo más difícil: empezar. Ahora te ayudamos a mostrarlo
+              como se merece.
             </p>
             <Button className="bg-white text-purple-700 hover:bg-purple-100 dark:bg-purple-200 dark:text-purple-900 dark:hover:bg-purple-300 mt-4 transition-colors shadow-lg hover:shadow-xl font-semibold">
               <MessageCircle className="mr-2 h-4 w-4" /> Contactanos ahora
@@ -336,7 +422,8 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-sm text-purple-700/70 dark:text-purple-400/70">
-                © {new Date().getFullYear()} WebDesign. Todos los derechos reservados.
+                © {new Date().getFullYear()} WebDesign. Todos los derechos
+                reservados.
               </p>
             </div>
             <div className="flex space-x-4">
@@ -363,5 +450,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

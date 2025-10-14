@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const phrases = [
-  "Diseñamos webs personalizadas que se adaptan a vos y a lo que ofrecés",
-  "Sostenemos los mejores precios, 100% confiables, tenemos experiencia y buenas referencias",
+  "Diseños adaptados a lo que ofrecés",
+  "Sostenemos los mejores precios",
   "Programamos tu web y diseñamos tu marca",
-]
+];
 
 export function HeroCarousel() {
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % phrases.length)
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [])
+      setCurrent((prev) => (prev + 1) % phrases.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="relative h-full flex items-center justify-center">
@@ -28,11 +28,11 @@ export function HeroCarousel() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-purple-700 to-fuchsia-700 dark:from-purple-400 dark:to-fuchsia-400 bg-clip-text text-transparent"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#575373] to-[#7A6F9C] bg-clip-text text-transparent"
         >
           {phrases[current]}
         </motion.h1>
       </AnimatePresence>
     </div>
-  )
+  );
 }
