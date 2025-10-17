@@ -259,9 +259,16 @@
   .fog {
     max-height: 710px;
   }
+
   .fog-img-first,
   .fog-img-second {
     background-size: 150%;
     background-position: center;
+  }
+
+  .absolute-bg {
+    background-size: 300%;
+    background-position: center;
+    top: 100px;
   }
 }
