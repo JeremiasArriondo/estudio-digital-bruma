@@ -78,7 +78,7 @@ export function FaqAccordion() {
               {faq.question}
             </span>
             <div
-              className={`flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${
+              className={`flex items-center justify-center min-w-8 h-8 rounded-full transition-all duration-300 ${
                 activeIndex === index
                   ? "bg-gradient-to-r from-purple-600 to-fuchsia-600 dark:from-purple-500 dark:to-fuchsia-500 scale-110"
                   : "bg-violet-primary dark:bg-purple-500 hover:scale-110"

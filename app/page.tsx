@@ -86,7 +86,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Prueba */}
       <section className="fog">
         <div className="absolute-bg"></div>
         <div className="fog-container">
@@ -96,10 +95,10 @@ export default function Home() {
 
         <section
           id="inicio"
-          className="relative min-h-[600px] py-20 md:py-32 overflow-hidden"
+          className="relative min-h-[600px] py-6 md:py-32 overflow-hidden"
         >
           <div className="container mx-auto px-4 md:px-6 relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center">
               <div className="space-y-6 text-center md:text-left">
                 <div className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-gradient-to-r from-[#6C668A] to-[#9A8FC0] dark:from-slate-700 dark:to-slate-400 text-white transition-colors shadow-lg">
                   Diseño web profesional
@@ -140,7 +139,7 @@ export default function Home() {
       {/* What We Do Section */}
       <section
         id="que-hacemos"
-        className="py-16 bg-white/50 dark:bg-slate-900/50 transition-colors"
+        className="py-16 px-4 bg-white/50 dark:bg-slate-900/50 transition-colors"
       >
         <div className="flex items-center justify-center">
           <div className="max-w-3xl mx-auto text-center space-y-6">

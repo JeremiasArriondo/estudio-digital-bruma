@@ -146,6 +146,11 @@
   }
 }
 
+::selection {
+  background-color: #7a6f9c;
+  color: #eeeeee;
+}
+
 .absolute-bg {
   position: absolute;
   top: 0;
