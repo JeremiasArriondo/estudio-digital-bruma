@@ -256,13 +256,14 @@
 }
 
 @media (max-width: 768px) {
-  .absolute-bg {
-    background: none !important;
-  }
-  .fog-img-first {
-    background: none !important;
-  }
+  .fog-img-first,
   .fog-img-second {
-    background: none !important;
+    background-size: 30%;
+    background-position: center;
+  }
+
+  .absolute-bg {
+    background-size: 300%;
+    background-position: center;
   }
 }

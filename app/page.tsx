@@ -122,7 +122,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <div className="relative h-[300px] md:h-[400px] animate-fade-in">
+              <div className="hidden md:block relative h-[300px] md:h-[400px] animate-fade-in">
                 <Image
                   src="/bruma.jpeg?height=600&width=500"
                   alt="Diseño web profesional en smartphone"
