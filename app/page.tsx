@@ -1,3 +1,5 @@
+import { AnimatedSection } from "@/components/animated-section";
+import { AnimatedTitle } from "@/components/animated-title";
 import { CategoryAccordion } from "@/components/category-accordion";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { HeroCarousel } from "@/components/hero-carousel";
@@ -143,15 +145,19 @@ export default function Home() {
       >
         <div className="flex items-center justify-center">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold  text-violet-primary dark:text-purple-400">
-              Diseñamos webs que trabajan para vos
-            </h2>
-            <p className="text-lg text-purple-900/80 dark:text-purple-300/80">
-              Diseñamos sitios que se adaptan a tus necesidades, que representan
-              lo que hacés, y que te ayudan a crecer. Cada web es única, como
-              vos y tu proyecto. Creamos sitios modernos, funcionales y claros.
-              También diseñamos tu identidad visual.
-            </p>
+            <AnimatedTitle>
+              <h2 className="text-3xl md:text-4xl font-bold  text-violet-primary dark:text-purple-400">
+                Diseñamos webs que trabajan para vos
+              </h2>
+            </AnimatedTitle>
+            <AnimatedSection delay={0.2}>
+              <p className="text-lg text-purple-900/80 dark:text-purple-300/80">
+                Diseñamos sitios que se adaptan a tus necesidades, que
+                representan lo que hacés, y que te ayudan a crecer. Cada web es
+                única, como vos y tu proyecto. Creamos sitios modernos,
+                funcionales y claros. También diseñamos tu identidad visual.
+              </p>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -161,12 +167,16 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto space-y-8">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-violet-primary dark:text-purple-400">
-                Categorías
-              </h2>
-              <p className="text-lg text-purple-900/80 dark:text-purple-300/80">
-                Tocá tu categoría para ver lo que incluye 👇
-              </p>
+              <AnimatedTitle>
+                <h2 className="text-3xl md:text-4xl font-bold text-violet-primary dark:text-purple-400">
+                  Categorías
+                </h2>
+              </AnimatedTitle>
+              <AnimatedSection delay={0.3}>
+                <p className="text-lg text-purple-900/80 dark:text-purple-300/80">
+                  Tocá tu categoría para ver lo que incluye 👇
+                </p>
+              </AnimatedSection>
             </div>
             <CategoryAccordion />
           </div>
@@ -180,13 +190,17 @@ export default function Home() {
       >
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-violet-primary dark:text-purple-400">
-              ¿También necesitás tu marca?
-            </h2>
-            <p className="text-lg text-purple-900/80 dark:text-purple-300/80">
-              Te ayudamos con el diseño de tu identidad visual, creación de
-              logo, branding, mockups y más.
-            </p>
+            <AnimatedTitle>
+              <h2 className="text-3xl md:text-4xl font-bold text-violet-primary dark:text-purple-400">
+                ¿También necesitás tu marca?
+              </h2>
+            </AnimatedTitle>
+            <AnimatedSection delay={0.3}>
+              <p className="text-lg text-purple-900/80 dark:text-purple-300/80">
+                Te ayudamos con el diseño de tu identidad visual, creación de
+                logo, branding, mockups y más.
+              </p>
+            </AnimatedSection>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
               <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-purple-200 dark:border-slate-700 hover:scale-105 transform duration-300">
                 <div className="h-12 w-12 bg-gradient-to-br from-purple-600 to-fuchsia-600 dark:from-purple-500 dark:to-fuchsia-500 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors shadow-lg">
@@ -287,9 +301,11 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-md mx-auto bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8 border-2 border-purple-200 dark:border-slate-700 transition-colors">
             <div className="text-center space-y-4 mb-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-destructive dark:text-purple-400">
-                Quiero que me contacten
-              </h2>
+              <AnimatedTitle>
+                <h2 className="text-2xl md:text-3xl font-bold text-destructive dark:text-purple-400">
+                  Quiero que me contacten
+                </h2>
+              </AnimatedTitle>
               <p className="text-purple-900/70 dark:text-purple-300/70">
                 Dejanos tus datos y te enviaremos información
               </p>
@@ -337,12 +353,17 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto space-y-8">
             <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-violet-primary dark:text-purple-400">
-                Preguntas frecuentes
-              </h2>
-              <p className="text-lg text-purple-900/80 dark:text-purple-300/80">
-                ✨ Respondemos todo lo que necesitás saber antes de dar el paso.
-              </p>
+              <AnimatedTitle>
+                <h2 className="text-3xl md:text-4xl font-bold text-violet-primary dark:text-purple-400">
+                  Preguntas frecuentes
+                </h2>
+              </AnimatedTitle>
+              <AnimatedSection delay={0.3}>
+                <p className="text-lg text-purple-900/80 dark:text-purple-300/80">
+                  ✨ Respondemos todo lo que necesitás saber antes de dar el
+                  paso.
+                </p>
+              </AnimatedSection>
             </div>
             <FaqAccordion />
           </div>
@@ -353,9 +374,11 @@ export default function Home() {
       <section className="py-16 bg-gradient-to-r from-[#6C668A] to-[#9A8FC0] dark:from-purple-900 dark:to-fuchsia-900 transition-colors shadow-xl">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-white">
-              ¿Listo para destacarte?
-            </h2>
+            <AnimatedTitle>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">
+                ¿Listo para destacarte?
+              </h2>
+            </AnimatedTitle>
             <p className="text-xl text-white/95">
               Muchos profesionales aún no tienen una web, o usan herramientas
               limitadas como Linktree. Nosotros hacemos que cada página trabaje
