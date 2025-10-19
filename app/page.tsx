@@ -155,9 +155,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Categories Section */}
-      <section id="categorias" className="py-16">
+      <section id="categorias" className="py-16 bg-white dark:bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto space-y-8">
             <div className="text-center space-y-4">

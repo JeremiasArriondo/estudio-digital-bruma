@@ -32,6 +32,10 @@ export function Marquee({
         className
       )}
     >
+      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-white dark:from-slate-950 to-transparent" />
+
+      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-white dark:from-slate-950 to-transparent" />
+
       <div
         className={cn(
           "flex shrink-0 justify-around [gap:var(--gap)] animate-marquee",
