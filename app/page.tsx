@@ -3,6 +3,7 @@ import { AnimatedTitle } from "@/components/animated-title";
 import { CategoryAccordion } from "@/components/category-accordion";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { HeroCarousel } from "@/components/hero-carousel";
+import { MobileNav } from "@/components/movile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -64,27 +65,7 @@ export default function Home() {
             </Link>
             <ThemeToggle />
           </nav>
-          <div className="flex md:hidden items-center gap-2">
-            <ThemeToggle />
-            <button className="text-purple-700 dark:text-purple-400">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-menu"
-              >
-                <line x1="4" x2="20" y1="12" y2="12"></line>
-                <line x1="4" x2="20" y1="6" y2="6"></line>
-                <line x1="4" x2="20" y1="18" y2="18"></line>
-              </svg>
-            </button>
-          </div>
+          <MobileNav />
         </div>
       </header>
 
