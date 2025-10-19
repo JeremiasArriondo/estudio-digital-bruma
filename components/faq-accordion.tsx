@@ -115,7 +115,7 @@ export function FaqAccordion() {
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden"
               >
-                <div className="p-4 pt-0 border-t-2 border-purple-200 dark:border-slate-700">
+                <div className="p-4 pt-0 border-purple-200 dark:border-slate-700">
                   <p className="text-violet-secondary dark:text-purple-300 leading-relaxed">
                     {faq.answer}
                   </p>
