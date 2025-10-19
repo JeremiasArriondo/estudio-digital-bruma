@@ -10,7 +10,6 @@ export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
-
   const closeMenu = () => setIsOpen(false);
 
   return (
@@ -19,7 +18,7 @@ export function MobileNav() {
         <ThemeToggle />
         <button
           onClick={toggleMenu}
-          className="text-purple-700 dark:text-purple-400 p-2 hover:bg-purple-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
+          className="text-[#6C668A] dark:text-[#9A8FC0] p-2 hover:bg-[#EAE6F6] dark:hover:bg-slate-800 rounded-lg transition-colors"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -29,67 +28,46 @@ export function MobileNav() {
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/50 z-40 top-16"
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black/40 z-40"
               onClick={closeMenu}
             />
-
-            {/* Menu */}
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
+              initial={{ y: "-100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-16 bottom-0 w-64 bg-white dark:bg-slate-900 shadow-xl z-50 border-l border-purple-200 dark:border-slate-700"
+              className="fixed top-0 left-0 w-full h-screen bg-gradient-to-b from-[#6C668A] to-[#9A8FC0] dark:from-slate-900 dark:to-slate-800 z-50 flex flex-col justify-center items-center space-y-8 shadow-lg"
             >
-              <nav className="flex flex-col p-6 space-y-4">
-                <Link
-                  href="#inicio"
-                  onClick={closeMenu}
-                  className="text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 transition-colors font-medium py-2 px-4 hover:bg-purple-100 dark:hover:bg-slate-800 rounded-lg"
-                >
-                  Inicio
-                </Link>
-                <Link
-                  href="#que-hacemos"
-                  onClick={closeMenu}
-                  className="text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 transition-colors font-medium py-2 px-4 hover:bg-purple-100 dark:hover:bg-slate-800 rounded-lg"
-                >
-                  Qué hacemos
-                </Link>
-                <Link
-                  href="#categorias"
-                  onClick={closeMenu}
-                  className="text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 transition-colors font-medium py-2 px-4 hover:bg-purple-100 dark:hover:bg-slate-800 rounded-lg"
-                >
-                  Categorías
-                </Link>
-                <Link
-                  href="#diseno"
-                  onClick={closeMenu}
-                  className="text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 transition-colors font-medium py-2 px-4 hover:bg-purple-100 dark:hover:bg-slate-800 rounded-lg"
-                >
-                  Diseño gráfico
-                </Link>
-                <Link
-                  href="#contacto"
-                  onClick={closeMenu}
-                  className="text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 transition-colors font-medium py-2 px-4 hover:bg-purple-100 dark:hover:bg-slate-800 rounded-lg"
-                >
-                  Contacto
-                </Link>
-                <Link
-                  href="#faq"
-                  onClick={closeMenu}
-                  className="text-purple-700 dark:text-purple-400 hover:text-purple-900 dark:hover:text-purple-300 transition-colors font-medium py-2 px-4 hover:bg-purple-100 dark:hover:bg-slate-800 rounded-lg"
-                >
-                  Preguntas frecuentes
-                </Link>
+              <button
+                onClick={closeMenu}
+                aria-label="Cerrar menú"
+                className="absolute top-6 right-6 text-white hover:text-[#E0D7FF] transition-colors"
+              >
+                <X size={28} />
+              </button>
+              <nav className="flex flex-col items-center space-y-6 text-lg font-semibold text-white">
+                {[
+                  { href: "#inicio", label: "Inicio" },
+                  { href: "#que-hacemos", label: "Qué hacemos" },
+                  { href: "#categorias", label: "Categorías" },
+                  { href: "#diseno", label: "Diseño gráfico" },
+                  { href: "#contacto", label: "Contacto" },
+                  { href: "#faq", label: "Preguntas frecuentes" },
+                ].map(({ href, label }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={closeMenu}
+                    className="hover:text-[#E0D7FF] transition-colors duration-300 text-2xl"
+                  >
+                    {label}
+                  </Link>
+                ))}
               </nav>
             </motion.div>
           </>
