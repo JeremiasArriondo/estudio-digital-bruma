@@ -226,10 +226,10 @@
   background-repeat: repeat-x;
   background-size: contain;
   background-position: center;
-  animation: marquee 30s linear infinite;
+  animation: marquee-fog 30s linear infinite;
 }
 
-@keyframes marquee {
+@keyframes marquee-fog {
   0% {
     transform: translate3d(0, 0, 0);
   }
@@ -237,6 +237,19 @@
   100% {
     transform: translate3d(-200vw, 0, 0);
   }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
 }
 
 /* Animaciones personalizadas */

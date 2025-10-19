@@ -3,6 +3,7 @@ import { AnimatedTitle } from "@/components/animated-title";
 import { CategoryAccordion } from "@/components/category-accordion";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { HeroCarousel } from "@/components/hero-carousel";
+import { Marquee, MarqueeItem } from "@/components/marquee";
 import { MobileNav } from "@/components/movile-nav";
 import { ParallaxBackground } from "@/components/parallax-background";
 import { ParallaxSection } from "@/components/parallax-section";
@@ -10,7 +11,15 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { WhatsAppButton } from "@/components/whatsapp-button";
-import { MessageCircle, Send } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  Building,
+  ChevronsLeftRightEllipsis,
+  MessageCircle,
+  Rss,
+  Send,
+  ShoppingBag,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -157,6 +166,48 @@ export default function Home() {
                   Categorías
                 </h2>
               </AnimatedTitle>
+              <Marquee speed="normal" pauseOnHover>
+                <MarqueeItem>
+                  <div className="flex items-center gap-2 px-4">
+                    <ShoppingBag />
+                    <span className="font-semibold text-violet-secondary dark:text-purple-300">
+                      Tienda online
+                    </span>
+                  </div>
+                </MarqueeItem>
+                <MarqueeItem>
+                  <div className="flex items-center gap-2 px-4">
+                    <BriefcaseBusiness />
+                    <span className="font-semibold text-violet-secondary dark:text-purple-300">
+                      Portfolio
+                    </span>
+                  </div>
+                </MarqueeItem>
+                <MarqueeItem>
+                  <div className="flex items-center gap-2 px-4">
+                    <Building />
+                    <span className="font-semibold text-violet-secondary dark:text-purple-300">
+                      Sitio empresarial
+                    </span>
+                  </div>
+                </MarqueeItem>
+                <MarqueeItem>
+                  <div className="flex items-center gap-2 px-4">
+                    <Rss />
+                    <span className="font-semibold text-violet-secondary dark:text-purple-300">
+                      Blogs
+                    </span>
+                  </div>
+                </MarqueeItem>
+                <MarqueeItem>
+                  <div className="flex items-center gap-2 px-4">
+                    <ChevronsLeftRightEllipsis />
+                    <span className="font-semibold text-violet-secondary dark:text-purple-300">
+                      Sitio web
+                    </span>
+                  </div>
+                </MarqueeItem>
+              </Marquee>
               <AnimatedSection delay={0.3}>
                 <p className="text-lg text-purple-900/80 dark:text-purple-300/80">
                   Tocá tu categoría para ver lo que incluye 👇
