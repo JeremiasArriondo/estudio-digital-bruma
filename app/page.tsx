@@ -4,6 +4,8 @@ import { CategoryAccordion } from "@/components/category-accordion";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { HeroCarousel } from "@/components/hero-carousel";
 import { MobileNav } from "@/components/movile-nav";
+import { ParallaxBackground } from "@/components/parallax-background";
+import { ParallaxSection } from "@/components/parallax-section";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -69,11 +71,11 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="fog">
-        <div className="absolute-bg"></div>
+      <section className="fog relative overflow-hidden">
+        <ParallaxBackground speed={0.3} className="absolute-bg" />
         <div className="fog-container">
-          <div className="fog-img fog-img-first"></div>
-          <div className="fog-img fog-img-second"></div>
+          <ParallaxBackground speed={0.15} className="fog-img fog-img-first" />
+          <ParallaxBackground speed={0.25} className="fog-img fog-img-second" />
         </div>
 
         <section
@@ -105,7 +107,10 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <div className="hidden md:block relative h-[300px] md:h-[400px] animate-fade-in">
+              <ParallaxSection
+                speed={0.1}
+                className="hidden md:block relative h-[300px] md:h-[400px] animate-fade-in"
+              >
                 <Image
                   src="/bruma.jpeg?height=600&width=500"
                   alt="Diseño web profesional en smartphone"
@@ -113,12 +118,11 @@ export default function Home() {
                   className="object-contain dark:opacity-90"
                   priority
                 />
-              </div>
+              </ParallaxSection>
             </div>
           </div>
         </section>
       </section>
-
       {/* What We Do Section */}
       <section
         id="que-hacemos"
