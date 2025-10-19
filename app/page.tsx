@@ -1,5 +1,6 @@
 import { AnimatedSection } from "@/components/animated-section";
 import { AnimatedTitle } from "@/components/animated-title";
+import { BrandingCarousel } from "@/components/branding-carousel";
 import { CategoryAccordion } from "@/components/category-accordion";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { HeroCarousel } from "@/components/hero-carousel";
@@ -236,96 +237,8 @@ export default function Home() {
                 logo, branding, mockups y más.
               </p>
             </AnimatedSection>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-purple-200 dark:border-slate-700 hover:scale-105 transform duration-300">
-                <div className="h-12 w-12 bg-gradient-to-br from-purple-600 to-fuchsia-600 dark:from-purple-500 dark:to-fuchsia-500 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors shadow-lg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-palette"
-                  >
-                    <circle cx="13.5" cy="6.5" r="2.5"></circle>
-                    <path d="M19 2.5H5a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V5.5a3 3 0 0 0-3-3Z"></path>
-                    <path d="M13.5 9a4 4 0 0 1 0 8h-3a4 4 0 0 1 0-8h3Z"></path>
-                  </svg>
-                </div>
-
-                <h3 className="text-xl font-semibold text-[#7A6F9C] dark:text-purple-400 mb-2">
-                  Diseño de Logo
-                </h3>
-                <p className="text-purple-900/70 dark:text-purple-300/70">
-                  Creamos la identidad visual de tu marca con un logo
-                  profesional y memorable.
-                </p>
-              </div>
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-purple-200 dark:border-slate-700 hover:scale-105 transform duration-300">
-                <div className="h-12 w-12 bg-gradient-to-br from-purple-500 to-fuchsia-500 dark:from-purple-400 dark:to-fuchsia-400 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors shadow-lg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-layout-grid"
-                  >
-                    <rect width="7" height="7" x="3" y="3" rx="1"></rect>
-                    <rect width="7" height="7" x="14" y="3" rx="1"></rect>
-                    <rect width="7" height="7" x="14" y="14" rx="1"></rect>
-                    <rect width="7" height="7" x="3" y="14" rx="1"></rect>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-[#7A6F9C] dark:text-purple-400 mb-2">
-                  Branding Completo
-                </h3>
-                <p className="text-purple-900/70 dark:text-purple-300/70">
-                  Desarrollamos todos los elementos visuales para que tu marca
-                  sea consistente.
-                </p>
-              </div>
-              <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-purple-200 dark:border-slate-700 hover:scale-105 transform duration-300">
-                <div className="h-12 w-12 bg-gradient-to-br from-fuchsia-600 to-pink-600 dark:from-fuchsia-500 dark:to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors shadow-lg">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="white"
-                    className="dark:stroke-white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect
-                      width="14"
-                      height="20"
-                      x="5"
-                      y="2"
-                      rx="2"
-                      ry="2"
-                    ></rect>
-                    <path d="M12 18h.01"></path>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-[#7A6F9C] dark:text-purple-400 mb-2">
-                  Mockups
-                </h3>
-                <p className="text-purple-900/70 dark:text-purple-300/70">
-                  Visualizá cómo se verá tu marca en diferentes aplicaciones y
-                  formatos.
-                </p>
-              </div>
+            <div className="pt-8">
+              <BrandingCarousel />
             </div>
           </div>
         </div>
