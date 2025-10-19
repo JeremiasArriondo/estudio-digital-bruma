@@ -97,7 +97,7 @@ export function CategoryAccordion() {
         >
           <button
             onClick={() => toggleCategory(index)}
-            className={`w-full p-4 flex items-center justify-between text-left rounded-lg transition-all duration-300 ${
+            className={`w-full p-4 flex items-center justify-between text-left rounded-t-lg transition-all duration-300 ${
               activeIndex === index
                 ? "bg-gradient-to-r from-[#6C668A] to-[#9A8FC0] dark:from-purple-700 dark:to-fuchsia-700 text-white"
                 : "bg-purple-100 dark:bg-slate-800 hover:bg-purple-200 dark:hover:bg-slate-700 text-[#575373] dark:text-purple-300"
