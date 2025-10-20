@@ -27,7 +27,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#FAF5FF] via-[#F3E8FF] to-[#575373] dark:from-[#0f172a] dark:via-[#1e293b] dark:to-[#0f172a] font-['Poppins',sans-serif] transition-colors duration-500">
       {/* <TopBar /> */}
-      <WhatsAppButton />
+      <WhatsAppButton
+        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:scale-110"
+        icon={<MessageCircle size={24} />}
+      />
 
       {/* Navbar */}
       <header className="sticky top-0 z-40 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-slate-900/80 border-b border-purple-200 dark:border-slate-700 transition-colors duration-300 shadow-sm">
@@ -308,9 +311,11 @@ export default function Home() {
               Ya hiciste lo más difícil: empezar. Ahora te ayudamos a mostrarlo
               como se merece.
             </p>
-            <Button className="bg-white text-violet-primary hover:bg-purple-100 dark:bg-purple-200 dark:text-purple-900 dark:hover:bg-purple-300 mt-4 transition-colors shadow-lg hover:shadow-xl font-semibold">
-              <MessageCircle className="mr-2 h-4 w-4" /> Contactanos ahora
-            </Button>
+            <WhatsAppButton
+              className="bg-white mx-auto text-violet-primary hover:bg-purple-100 dark:bg-purple-200 dark:text-purple-900 dark:hover:bg-purple-300 mt-4 transition-colors shadow-lg hover:shadow-xl font-semibold px-4 py-2 rounded"
+              icon={<MessageCircle className="mr-2 h-4 w-4" />}
+              label="Contactanos ahora"
+            />
           </div>
         </div>
       </section>

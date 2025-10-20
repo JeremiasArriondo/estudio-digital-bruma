@@ -1,20 +1,34 @@
-"use client"
+"use client";
 
-import { MessageCircle } from "lucide-react"
+import { ReactNode } from "react";
 
-export function WhatsAppButton() {
+interface WhatsAppButtonProps {
+  phone?: string;
+  message?: string;
+  className?: string;
+  icon?: ReactNode;
+  label?: string;
+}
+
+export function WhatsAppButton({
+  phone = "2475436004",
+  message = "Hola, necesito información sobre…",
+  className = "",
+  icon,
+  label,
+}: WhatsAppButtonProps) {
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent("Hola, necesito información sobre…")
-    window.open(`https://wa.me/2475436004?text=${message}`, "_blank")
-  }
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/${phone}?text=${encoded}`, "_blank");
+  };
 
   return (
     <button
       onClick={handleWhatsAppClick}
-      className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 text-white p-4 rounded-full shadow-lg transition-all hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-400 dark:focus:ring-green-500 focus:ring-offset-2"
-      aria-label="Contactar por WhatsApp"
+      className={`flex items-center justify-center gap-2 transition-all ${className}`}
     >
-      <MessageCircle size={24} />
+      {icon}
+      {label && <span>{label}</span>}
     </button>
-  )
+  );
 }
