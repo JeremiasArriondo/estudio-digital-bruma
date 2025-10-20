@@ -2,6 +2,7 @@ import { AnimatedSection } from "@/components/animated-section";
 import { AnimatedTitle } from "@/components/animated-title";
 import { BrandingCarousel } from "@/components/branding-carousel";
 import { CategoryAccordion } from "@/components/category-accordion";
+import { ContactForm } from "@/components/contact-form";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { HeroCarousel } from "@/components/hero-carousel";
 import { Marquee, MarqueeItem } from "@/components/marquee";
@@ -10,7 +11,6 @@ import { ParallaxBackground } from "@/components/parallax-background";
 import { ParallaxSection } from "@/components/parallax-section";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import {
   BriefcaseBusiness,
@@ -18,7 +18,6 @@ import {
   ChevronsLeftRightEllipsis,
   MessageCircle,
   Rss,
-  Send,
   ShoppingBag,
 } from "lucide-react";
 import Image from "next/image";
@@ -261,37 +260,7 @@ export default function Home() {
                 Dejanos tus datos y te enviaremos información
               </p>
             </div>
-            <form className="space-y-4">
-              <div className="space-y-2">
-                <label
-                  htmlFor="name"
-                  className="text-sm font-medium text-violet-secondary dark:text-purple-400"
-                >
-                  Nombre
-                </label>
-                <Input
-                  id="name"
-                  placeholder="Tu nombre"
-                  className="border-2 border-purple-200 dark:border-slate-600 focus:border-purple-600 dark:focus:border-purple-500 focus:ring-purple-600 dark:focus:ring-purple-500 dark:bg-slate-900 dark:text-purple-200"
-                />
-              </div>
-              <div className="space-y-2">
-                <label
-                  htmlFor="contact"
-                  className="text-sm font-medium text-violet-secondary dark:text-purple-400"
-                >
-                  Email o teléfono
-                </label>
-                <Input
-                  id="contact"
-                  placeholder="Tu email o teléfono"
-                  className="border-2 border-purple-200 dark:border-slate-600 focus:border-purple-600 dark:focus:border-purple-500 focus:ring-purple-600 dark:focus:ring-purple-500 dark:bg-slate-900 dark:text-purple-200"
-                />
-              </div>
-              <Button className="w-full bg-gradient-to-r from-[#6C668A] to-[#9A8FC0] hover:from-purple-700 hover:to-fuchsia-700 dark:from-purple-500 dark:to-fuchsia-500 dark:hover:from-purple-600 dark:hover:to-fuchsia-600 transition-colors shadow-lg hover:shadow-xl text-white">
-                <Send className="mr-2 h-4 w-4" /> Enviarme info
-              </Button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>
