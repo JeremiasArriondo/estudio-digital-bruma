@@ -135,21 +135,13 @@ export function CategoryAccordion() {
                     {category.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-start">
                         <span className="text-purple-600 dark:text-purple-400 mr-2 text-lg">
-                          ✅
+                          *
                         </span>
                         <span className="text-purple-900 dark:text-purple-300">
                           {benefit}
                         </span>
                       </li>
                     ))}
-                    <li className="flex items-start">
-                      <span className="text-purple-600 dark:text-purple-400 mr-2 text-lg">
-                        ✅
-                      </span>
-                      <span className="text-purple-900 dark:text-purple-300">
-                        etc.
-                      </span>
-                    </li>
                   </ul>
                 </div>
               </motion.div>
