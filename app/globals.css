@@ -158,7 +158,7 @@
   height: 100%;
   width: 100%;
   z-index: 0;
-  background: url("/bruma.png") center/cover no-repeat;
+  background: url("/bruma-bg.webp") center/cover no-repeat;
 }
 
 .title {
@@ -280,7 +280,7 @@
   }
 
   .absolute-bg {
-    background: url("/bruma.jpeg");
+    background: url("/bruma.webp");
     background-repeat: no-repeat;
     background-size: 300%;
     background-position: center;

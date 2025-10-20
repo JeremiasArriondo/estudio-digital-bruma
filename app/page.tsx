@@ -125,7 +125,7 @@ export default function Home() {
                 className="hidden md:block relative h-[300px] md:h-[400px] animate-fade-in"
               >
                 <Image
-                  src="/bruma.jpeg?height=600&width=500"
+                  src="/bruma.webp?height=600&width=500"
                   alt="Diseño web profesional en smartphone"
                   fill
                   className="object-contain dark:opacity-90"
