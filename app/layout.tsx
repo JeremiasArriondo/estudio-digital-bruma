@@ -1,8 +1,8 @@
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Analytics } from "@vercel/analytics/next";
 import { DM_Sans, Inter, Poppins } from "next/font/google";
 import type React from "react";
-
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -69,6 +69,7 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
