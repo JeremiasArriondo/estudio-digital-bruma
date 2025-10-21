@@ -8,7 +8,6 @@ import { HeroCarousel } from "@/components/hero-carousel";
 import { Marquee, MarqueeItem } from "@/components/marquee";
 import { MobileNav } from "@/components/movile-nav";
 import { ParallaxBackground } from "@/components/parallax-background";
-import { ParallaxSection } from "@/components/parallax-section";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/components/whatsapp-button";
@@ -122,10 +121,8 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <ParallaxSection
-                speed={0.1}
-                className="hidden md:block relative h-[300px] md:h-[400px] animate-fade-in"
-              >
+
+              <div className="hidden md:block relative h-[300px] md:h-[400px] animate-fade-in">
                 <Image
                   src="/bruma.webp?height=600&width=500"
                   alt="Diseño web profesional en smartphone"
@@ -133,7 +130,7 @@ export default function Home() {
                   className="object-contain dark:opacity-90"
                   priority
                 />
-              </ParallaxSection>
+              </div>
             </div>
           </div>
         </section>
