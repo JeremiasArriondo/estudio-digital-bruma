@@ -1,0 +1,288 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-violet-primary: #575373;
+  --color-violet-secondary: #7a6f9c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  :root {
+    /* Fondo y Superficies Claras (Basado en #F2F2F2) */
+    --background: 0 0% 95%; /* Un blanco suave */
+    --card: 0 0% 98%; /* Ligeramente más claro que el fondo */
+    --popover: 0 0% 98%;
+
+    /* Primer Plano y Texto Principal (Basado en #575373 y #454559) */
+    --foreground: 246 19% 15%; /* Texto muy oscuro, derivado del primario */
+    --card-foreground: 246 19% 15%;
+    --popover-foreground: 246 19% 15%;
+
+    /* Color Principal (El más distintivo: #575373) */
+    --primary: 248 16% 39%;
+    --primary-foreground: 0 0% 98%; /* Texto en contraste (casi blanco) */
+
+    /* Color Secundario (El segundo oscuro: #454559) */
+    --secondary: 240 13% 31%;
+    --secondary-foreground: 0 0% 98%; /* Texto en contraste */
+
+    /* Elementos Muteados/Inactivos (Basado en #CCD0D9) */
+    --muted: 219 18% 83%;
+    --muted-foreground: 216 11% 50%; /* Un gris medio para el texto */
+
+    /* Acento (Similar al muteado, o un tono intermedio: #AEB4BF) */
+    --accent: 216 11% 71%;
+    --accent-foreground: 246 19% 15%; /* Texto oscuro */
+
+    /* Borde y Entrada (Basado en #AEB4BF) */
+    --border: 216 11% 71%;
+    --input: 216 11% 71%;
+    --ring: 246 19% 39%; /* Color principal para el anillo de enfoque */
+
+    /* Destructivo/Error (Se mantuvo un rojo estándar para la función) */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Otros Parámetros */
+    --radius: 0.5rem;
+    /* Mantenemos las variables de gráficos/sidebar sin asignar un color específico */
+    --chart-1: var(--chart-1);
+    --chart-2: var(--chart-2);
+    --chart-3: var(--chart-3);
+    --chart-4: var(--chart-4);
+    --chart-5: var(--chart-5);
+    --sidebar: var(--sidebar);
+    --sidebar-foreground: var(--sidebar-foreground);
+    --sidebar-primary: var(--sidebar-primary);
+    --sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --sidebar-accent: var(--sidebar-accent);
+    --sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --sidebar-border: var(--sidebar-border);
+    --sidebar-ring: var(--sidebar-ring);
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: var(--chart-1);
+    --chart-2: var(--chart-2);
+    --chart-3: var(--chart-3);
+    --chart-4: var(--chart-4);
+    --chart-5: var(--chart-5);
+    --sidebar: var(--sidebar);
+    --sidebar-foreground: var(--sidebar-foreground);
+    --sidebar-primary: var(--sidebar-primary);
+    --sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --sidebar-accent: var(--sidebar-accent);
+    --sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --sidebar-border: var(--sidebar-border);
+    --sidebar-ring: var(--sidebar-ring);
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+::selection {
+  background-color: #7a6f9c;
+  color: #eeeeee;
+}
+
+.absolute-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background: url("/bruma-bg.webp") center/cover no-repeat;
+}
+
+.title {
+  color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title > h1 {
+  color: #fff;
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.fog {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.fog-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.fog-img {
+  position: absolute;
+  height: 100vh;
+  width: 300vw;
+  z-index: 2;
+}
+
+.fog-img-first {
+  background: url("/fog-1.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center;
+  animation: marquee 60s linear infinite;
+}
+
+.fog-img-mobile {
+  background: url("/fog-1.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center;
+  animation: marquee 60s linear infinite;
+}
+
+.fog-img-second {
+  background: url("/fog-2.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center;
+  animation: marquee-fog 30s linear infinite;
+}
+
+@keyframes marquee-fog {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-200vw, 0, 0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .fog {
+    max-height: 710px;
+  }
+
+  .fog-img-first,
+  .fog-img-second {
+    background-size: 150%;
+    background-position: center;
+  }
+
+  .absolute-bg {
+    background: url("/bruma.webp");
+    background-repeat: no-repeat;
+    background-size: 300%;
+    background-position: center;
+    top: 100px;
+  }
+}
