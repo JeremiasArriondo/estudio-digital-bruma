@@ -1,0 +1,54 @@
+---
+import { ParallaxBackground } from "./ParallaxBackground";
+
+---
+
+<section class="fog relative overflow-hidden">
+  <ParallaxBackground client:visible speed={0.3} className="absolute-bg" />
+  <div class="fog-container">
+    <ParallaxBackground client:visible speed={0.15} className="fog-img fog-img-first" />
+    <ParallaxBackground client:visible speed={0.25} className="fog-img fog-img-second" />
+  </div>
+
+  <section
+    id="inicio"
+    class="relative min-h-[600px] py-6 md:py-32 overflow-hidden"
+  >
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center">
+        <div class="space-y-6 text-center md:text-left">
+          <div class="inline-block px-3 py-1 text-sm font-medium rounded-full bg-gradient-to-r from-[#6C668A] to-[#9A8FC0] dark:from-slate-700 dark:to-slate-400 text-white transition-colors shadow-lg">
+            Diseño web profesional
+          </div>
+          <div class="h-24 md:h-32">
+            <!-- <HeroCarousel /> -->
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="#contacto">
+              <button class="w-full sm:w-auto bg-gradient-to-r from-[#6C668A] to-[#9A8FC0] hover:from-purple-700 hover:to-fuchsia-700 dark:from-slate-700 dark:to-slate-400 dark:hover:from-purple-600 dark:hover:to-fuchsia-600 text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                Quiero mi web ahora
+              </button>
+            </a>
+            <a href="#categorias">
+              <button
+                variant="outline"
+                class="w-full sm:w-auto border-2 border-[#7A6F9C] dark:border-slate-700 text-[#7A6F9C] dark:text-purple-400 hover:bg-purple-100 dark:hover:bg-slate-800 hover:text-purple-900 dark:hover:text-purple-300 transition-all duration-300 bg-transparent font-semibold"
+              >
+                Ver categorías
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div class="hidden md:block relative h-[300px] md:h-[400px] animate-fade-in">
+          <img
+            fetchpriority="high" 
+            src="/bruma.webp?height=600&width=500"
+            alt="Diseño web profesional en smartphone"
+            class="object-contain dark:opacity-90"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

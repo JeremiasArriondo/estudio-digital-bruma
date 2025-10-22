@@ -1,0 +1,71 @@
+---
+import {
+BriefcaseBusiness,
+Building,
+ChevronsLeftRightEllipsis,
+Rss,
+ShoppingBag
+} from "lucide-react";
+import { Marquee, MarqueeItem } from './Marquee';
+---
+<section id="categorias" class="py-16 bg-white dark:bg-background">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="max-w-3xl mx-auto space-y-8">
+      <div class="text-center space-y-4">
+        <!-- <AnimatedTitle> -->
+          <h2 class="text-3xl md:text-4xl font-bold text-violet-primary dark:text-purple-400">
+            Categorías
+          </h2>
+        <!-- </AnimatedTitle> -->
+        <Marquee speed="normal" pauseOnHover>
+          <MarqueeItem>
+            <div class="flex items-center gap-2 px-4">
+              <ShoppingBag />
+              <span class="font-semibold text-violet-secondary dark:text-purple-300">
+                Tienda online
+              </span>
+            </div>
+          </MarqueeItem>
+          <MarqueeItem>
+            <div class="flex items-center gap-2 px-4">
+              <BriefcaseBusiness />
+              <span class="font-semibold text-violet-secondary dark:text-purple-300">
+                Portfolio
+              </span>
+            </div>
+          </MarqueeItem>
+          <MarqueeItem>
+            <div class="flex items-center gap-2 px-4">
+              <Building />
+              <span class="font-semibold text-violet-secondary dark:text-purple-300">
+                Sitio empresarial
+              </span>
+            </div>
+          </MarqueeItem>
+          <MarqueeItem>
+            <div class="flex items-center gap-2 px-4">
+              <Rss />
+              <span class="font-semibold text-violet-secondary dark:text-purple-300">
+                Blogs
+              </span>
+            </div>
+          </MarqueeItem>
+          <MarqueeItem>
+            <div class="flex items-center gap-2 px-4">
+              <ChevronsLeftRightEllipsis />
+              <span class="font-semibold text-violet-secondary dark:text-purple-300">
+                Sitio web
+              </span>
+            </div>
+          </MarqueeItem>
+        </Marquee>
+        <!-- <AnimatedSection delay={0.3}> -->
+          <p class="text-lg text-purple-900/80 dark:text-purple-300/80">
+            Tocá tu categoría para ver lo que incluye 👇
+          </p>
+        <!-- </AnimatedSection> -->
+      </div>
+      <!-- <CategoryAccordion /> -->
+    </div>
+  </div>
+</section>
