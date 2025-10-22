@@ -1,0 +1,43 @@
+---
+interface Props {
+  className?: string;
+  speed?: "slow" | "normal" | "fast";
+  direction?: "left" | "right";
+  pauseOnHover?: boolean;
+  children: any;
+}
+
+const { className = "", speed = "normal", direction = "left", pauseOnHover = true, children } = Astro.props;
+
+const speedMap = {
+  slow: "40s",
+  normal: "25s",
+  fast: "15s",
+};
+
+const animationDirection = direction === "right" ? "reverse" : "normal";
+const pauseClass = pauseOnHover ? "group-hover:[animation-play-state:paused]" : "";
+---
+
+<div class={`group relative flex overflow-hidden [--gap:1rem] gap-[var(--gap)] ${className}`}>
+  <!-- Gradientes laterales -->
+  <div class="pointer-events-none absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-white dark:from-slate-950 to-transparent"></div>
+  <div class="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-white dark:from-slate-950 to-transparent"></div>
+
+  <!-- Primera fila -->
+  <div
+    class={`flex shrink-0 justify-around [gap:var(--gap)] animate-marquee ${pauseClass}`}
+    style={`animation-duration: ${speedMap[speed]}; animation-direction: ${animationDirection};`}
+  >
+    <slot />
+  </div>
+
+  <!-- Duplicado oculto -->
+  <div
+    class={`flex shrink-0 justify-around [gap:var(--gap)] animate-marquee ${pauseClass}`}
+    style={`animation-duration: ${speedMap[speed]}; animation-direction: ${animationDirection};`}
+    aria-hidden="true"
+  >
+    <slot />
+  </div>
+</div>

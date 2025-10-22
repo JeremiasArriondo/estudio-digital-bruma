@@ -1,26 +1,24 @@
 ---
-import {
-BriefcaseBusiness,
-Building,
-ChevronsLeftRightEllipsis,
-Rss,
-ShoppingBag
-} from "lucide-react";
-import { Marquee, MarqueeItem } from './Marquee';
+
+import AnimatedTitle from "./AnimatedTitle.astro";
+import CategoryAccordion from "./CategoryAccordion.astro";
+import Marquee from "./Marquee.astro";
+import MarqueeItem from "./MarqueeItem.astro";
+
 ---
 <section id="categorias" class="py-16 bg-white dark:bg-background">
   <div class="container mx-auto px-4 md:px-6">
     <div class="max-w-3xl mx-auto space-y-8">
       <div class="text-center space-y-4">
-        <!-- <AnimatedTitle> -->
+        <AnimatedTitle  delay={0.2} className="text-4xl font-bold text-center">
           <h2 class="text-3xl md:text-4xl font-bold text-violet-primary dark:text-purple-400">
             Categorías
           </h2>
-        <!-- </AnimatedTitle> -->
-        <Marquee speed="normal" pauseOnHover>
+        </AnimatedTitle>
+        <Marquee speed="fast" direction="left" pauseOnHover className="mt-8">
           <MarqueeItem>
             <div class="flex items-center gap-2 px-4">
-              <ShoppingBag />
+              <!-- <ShoppingBag /> -->
               <span class="font-semibold text-violet-secondary dark:text-purple-300">
                 Tienda online
               </span>
@@ -28,7 +26,7 @@ import { Marquee, MarqueeItem } from './Marquee';
           </MarqueeItem>
           <MarqueeItem>
             <div class="flex items-center gap-2 px-4">
-              <BriefcaseBusiness />
+              <!-- <BriefcaseBusiness /> -->
               <span class="font-semibold text-violet-secondary dark:text-purple-300">
                 Portfolio
               </span>
@@ -36,7 +34,7 @@ import { Marquee, MarqueeItem } from './Marquee';
           </MarqueeItem>
           <MarqueeItem>
             <div class="flex items-center gap-2 px-4">
-              <Building />
+              <!-- <Building /> -->
               <span class="font-semibold text-violet-secondary dark:text-purple-300">
                 Sitio empresarial
               </span>
@@ -44,7 +42,7 @@ import { Marquee, MarqueeItem } from './Marquee';
           </MarqueeItem>
           <MarqueeItem>
             <div class="flex items-center gap-2 px-4">
-              <Rss />
+              <!-- <Rss /> -->
               <span class="font-semibold text-violet-secondary dark:text-purple-300">
                 Blogs
               </span>
@@ -52,7 +50,7 @@ import { Marquee, MarqueeItem } from './Marquee';
           </MarqueeItem>
           <MarqueeItem>
             <div class="flex items-center gap-2 px-4">
-              <ChevronsLeftRightEllipsis />
+              <!-- <ChevronsLeftRightEllipsis /> -->
               <span class="font-semibold text-violet-secondary dark:text-purple-300">
                 Sitio web
               </span>
@@ -65,7 +63,7 @@ import { Marquee, MarqueeItem } from './Marquee';
           </p>
         <!-- </AnimatedSection> -->
       </div>
-      <!-- <CategoryAccordion /> -->
+      <CategoryAccordion />
     </div>
   </div>
 </section>

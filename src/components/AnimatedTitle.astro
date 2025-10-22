@@ -1,0 +1,49 @@
+---
+const { className = "", delay = 0 } = Astro.props;
+---
+
+<style>
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animated {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .animated.visible {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+</style>
+
+<div
+  class={`animated ${className}`}
+  style={`animation-delay: ${delay}s`}
+  data-animate
+>
+  <slot />
+</div>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "-50px" }
+  );
+
+  document.querySelectorAll("[data-animate]").forEach((el) => observer.observe(el));
+</script>

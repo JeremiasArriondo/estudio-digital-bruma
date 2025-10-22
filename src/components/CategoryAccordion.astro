@@ -1,0 +1,142 @@
+---
+const categories = [
+  {
+    title: "Profesionales de la salud",
+    subtitle: "(Psicólogos, nutricionistas, kinesiólogos, etc.)",
+    benefits: [
+      "Web con presentación profesional",
+      "Turnos online o contacto directo",
+      "Secciones de servicios, testimonios y contacto",
+      "Transmite confianza y credibilidad",
+      "Blog o sección de recursos (opcional)",
+      "Adaptada a celular",
+    ],
+  },
+  {
+    title: "Emprendedores",
+    benefits: [
+      "Web para mostrar productos, servicios o ambos",
+      "Contacto directo por WhatsApp",
+      "Secciones de presentación, catálogo, testimonios, contacto",
+      "Integración con redes sociales",
+      "Posibilidad de ventas online",
+    ],
+  },
+  {
+    title: "Tiendas y marcas",
+    benefits: [
+      "Catálogo visual",
+      "Integración con medios de pago",
+      "Seguimiento de pedidos",
+      "Conexión con redes y WhatsApp",
+      "Formulario de contacto",
+    ],
+  },
+  {
+    title: "Artistas, docentes, freelancers",
+    benefits: [
+      "Portafolio visual",
+      "Agenda de actividades o servicios",
+      "Contacto profesional directo",
+      "Diseño a medida de tu identidad creativa",
+    ],
+  },
+  {
+    title: "Educadores y formadores",
+    benefits: [
+      "Presentación de cursos o talleres",
+      "Formularios de inscripción",
+      "Enlaces a plataformas educativas o canales",
+      "Sección de recursos y contacto",
+    ],
+  },
+  {
+    title: "Gastronomía y delivery",
+    benefits: [
+      "Carta visual online",
+      "Botón de pedidos por WhatsApp",
+      "Sección destacada con fotos",
+      "Horarios de atención",
+      "Adaptado a celular",
+    ],
+  },
+  {
+    title: "Servicios personales",
+    subtitle: "(Peluquería, estética, spa, masajes, uñas, barberías…)",
+    benefits: [
+      "Servicios, turnos, contacto",
+      "Muestra visual del trabajo",
+      "Integración con redes",
+    ],
+  },
+];
+---
+
+<div class="space-y-4" id="accordion">
+  {categories.map((category, index) => (
+    <div class="rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+      <button
+        class="w-full p-4 flex items-center justify-between text-left rounded-t-lg transition-all duration-300 bg-purple-100 dark:bg-slate-800 hover:bg-purple-200 dark:hover:bg-slate-700 text-[#575373] dark:text-purple-300"
+        data-accordion-button
+      >
+        <span class="font-semibold">{category.title}</span>
+        <div
+          class="p-1 rounded-full bg-violet-primary dark:bg-purple-500 transition-transform duration-300"
+          data-chevron
+        >
+          {/* <ChevronDown class="text-white w-4 h-4" /> */}
+          fecha
+        </div>
+      </button>
+
+      <div
+        class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out bg-white dark:bg-slate-800 border-2 border-purple-200 dark:border-slate-700 rounded-b-lg"
+        data-content
+      >
+        <div class="p-4">
+          {category.subtitle && (
+            <p class="text-sm text-purple-700/70 dark:text-purple-400/70 mb-3">
+              {category.subtitle}
+            </p>
+          )}
+          <ul class="space-y-2">
+            {category.benefits.map((benefit) => (
+              <li class="flex items-start">
+                <span class="text-purple-600 dark:text-purple-400 mr-2 text-lg">*</span>
+                <span class="text-purple-900 dark:text-purple-300">{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+<script>
+  const accordion = document.querySelector("#accordion");
+  if (accordion) {
+    accordion.addEventListener("click", (e) => {
+      const button = e.target.closest("[data-accordion-button]");
+      if (!button) return;
+
+      const content = button.nextElementSibling;
+      const chevron = button.querySelector("[data-chevron]");
+
+      const isOpen = content.classList.contains("open");
+      document.querySelectorAll("[data-content]").forEach((el) => {
+        el.classList.remove("open");
+        el.style.maxHeight = "0px";
+      });
+      document.querySelectorAll("[data-chevron]").forEach((icon) => {
+        icon.style.transform = "rotate(0deg)";
+      });
+
+      if (!isOpen) {
+        content.classList.add("open");
+        content.style.maxHeight = content.scrollHeight + "px";
+        chevron.style.transform = "rotate(180deg)";
+      }
+    });
+  }
+</script>
