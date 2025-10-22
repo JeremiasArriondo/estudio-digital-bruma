@@ -24,6 +24,7 @@ export function WhatsAppButton({
 
   return (
     <button
+      aria-label="Contactar por WhatsApp"
       onClick={handleWhatsAppClick}
       className={`flex items-center justify-center gap-2 transition-all ${className}`}
     >
