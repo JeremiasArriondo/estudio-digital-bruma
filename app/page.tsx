@@ -11,6 +11,7 @@ import { ParallaxBackground } from "@/components/parallax-background";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { WhatsAppButton } from "@/components/whatsapp-button";
+import Year from "@/components/year";
 import {
   BriefcaseBusiness,
   Building,
@@ -324,7 +325,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-sm text-violet-primary dark:text-purple-400">
-                © {new Date().getFullYear()} BrumaDesign
+                © <Year /> BrumaDesign
               </p>
             </div>
             <div className="flex space-x-4">
